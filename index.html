@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>New Years 2024 Countdown</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital@0;1&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="description" content="This is a website that counts down to New Years 2024. Happy pre-new years!">
+    <meta name="keywords" content="new years, 2024, happy new years">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="New Years 2024 Countdown" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="fireworks.jpg" /"
+    <meta property="og:url" content="https://newyears2024.github.io" />
+    <meta property="og:description" content="This is a website that counts down to New Years 2024. Happy pre-new years!" />
+    <meta property="og:locale" content="en_US" />
+    <script>
+      let countDownDate = new Date("Jan 1, 2024 00:00:00").getTime();
+      let x = setInterval(function() {
+        let now = new Date().getTime();
+        let distance = countDownDate - now;
+        let days = Math.floor(distance / 86400000);
+        let hours = Math.floor((distance % 86400000) / 3600000);
+        let minutes = Math.floor((distance % 3600000) / 60000);
+        let seconds = Math.floor((distance % 60000) / 1000);
+        document.getElementById("timer").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+        if (distance < 0) {
+          clearInterval(x);
+          document.getElementById("timer").innerHTML = "Happy New Years!";
+          document.getElementById("celebration").innerHTML = "This is a website that counts down to New Years 2024. Happy new years!";
+        }
+      }, 1000);
+    </script>
+  </head>
+  <body>
+    <div class="background"></div>
+    <div class="elements">
+      <p id="timer" style="font-size:48px;"></p>
+      <hr>
+      <h1>New Years 2024 Countdown</h1>
+      <p id="celebration">This is a website that counts down to New Years 2024. Happy pre-new years!</p>
+    </div>
+  </body>
+</html>
